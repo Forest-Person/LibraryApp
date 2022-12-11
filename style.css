@@ -88,8 +88,14 @@ li{
  
 }
 
+.yesButton {
 
+    background-color: rgb(170, 172, 179);
+}
+.noButton {
 
+    background-color: rgb(170, 172, 179);
+}
 
 /*---------Radio buttons and remove button container---------*/
 
