@@ -1,12 +1,16 @@
 myBooks = []
 
-function Book(title,author,pages,readYet,rating) {
+const testBook1 = Book('Trickster and the paranormal','George Hansen', 564)
+const testBook2 = Book('Authors of the paranormal','Dr. Jeffrey Kripal',332)
+const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
+
+
+function Book(title,author,pages) {
 
     this.title = title
     this.author = author
     this.pages = pages
-    this.readYet = readYet
-    this.rating = rating
+    this.rating = false
     //constructor
 }
 
@@ -15,10 +19,6 @@ function addBook() {
     //add book to library
 }
 
-function newBook(){
-
-    //function that takes use rinput and adds a new book based on their input
-}
 
 /*Write a function that loops through the array and displays each book on the page. 
 You can display them in some sort of table, or each on their own “card”. 
@@ -31,7 +31,8 @@ and anything else you might want.
 
 You will most likely encounter an issue where submitting your form will not do what you expect it to do. 
 That’s because the submit input tries to send the data to a server by default. 
-Read up on the event.preventDefault documentation again and see how 
+Read up on the event.preventDefault documentation again and see how.
+
 Add a button on each book’s display to remove the book from the library.
 
 You will need to associate your DOM elements with the actual book objects in some way. 
