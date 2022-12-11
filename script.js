@@ -1,6 +1,6 @@
 myBooks = []
 
-const testBook1 = Book('Trickster and the paranormal','George Hansen', 564)
+const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564)
 const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)
 const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
 
