@@ -9,7 +9,7 @@ li{
 }
 
 
-/*--------Header---------*/
+/*--------Header Container add book button ad header title---------*/
 
 .titleAddBookButtonContainer {
 
@@ -46,8 +46,26 @@ li{
 .cardContainer {
 
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
 }
 
 
+
+
+/*------------Card Articles---------------------*/
+
+.bookInfoImageContainer{
+ 
+    display:flex;
+    flex-direction: column;
+    
+    
+
+}
+
+.bookInfoImageContainer img{
+  align-self: center;
+ 
+ 
+}
