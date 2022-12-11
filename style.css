@@ -3,10 +3,12 @@
     box-sizing:border-box;
 }
 
-li{
+html{
 
-    list-style: none;
+    background-color: rgb(80, 87, 122);
 }
+
+
 
 
 /*--------Header Container add book button ad header title---------*/
@@ -17,9 +19,15 @@ li{
     justify-content: space-around;
     
     flex-wrap: wrap;
+    background-color: rgb(64, 66, 88);
     
     
 
+}
+
+li{
+
+    list-style: none;
 }
 
 .addBookButton {
@@ -30,13 +38,17 @@ li{
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 2rem;
-
+    background-color: rgb(80, 87, 122);
+    border-radius: 5px;
 }
 
 .bookHeader {
 
     font-size: 4rem;
-   
+    background-color: rgb(107, 114, 142);
+    border-radius: 5px;
+    padding-left:1rem;
+    padding-right: 1rem;
 
 }
 
@@ -61,13 +73,13 @@ li{
     display:flex;
     flex-direction: column;
     white-space: nowrap;
-    
+    background-color: rgb(235, 237, 243);
 
 }
 
 .bookInfoImageContainer img{
   align-self: center;         /*stops images from stretching with flex*/
- 
+    
  
 }
 
@@ -81,9 +93,10 @@ li{
     display:flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    margin-right: 1rem;
-    margin-left:1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     white-space: nowrap;
+    background-color: rgb(235, 237, 243);
 }
 
 .rateMe{
@@ -97,5 +110,7 @@ li{
 .removeButton{
 
     margin-top:.5rem;
-    margin-bottom:.5rem
+    margin-bottom:.5rem;
+    background-color: rgb(178, 184, 217);
+    border-radius: 5px;
 }
