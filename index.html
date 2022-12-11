@@ -9,38 +9,43 @@
 </head>
 <body>
 
-    <header>
+    <header class = "titleAddBookButtonContainer">
         <h1 class = "bookHeader"> Book View X You</h1>
         <button class = "addBookButton">Add Book</button>
     </header>
 
-    <section>
+    <section class = 'cardContainer'>
         <article>
-            <ul>
-                <li>Title: American Cosmic</li>
-                <li>Author: Dr. Diana Pasulka</li>
-                <li>Pages: 288 </li>
-                <li>Read yet: Yes</li>       
-            </ul>
-                <img src= "./images/american.jpg" alt = "Image of the book American Cosmic by Dr. Diana Pasulka.">
+                
+            <div class = "bookInfoImageContainer">
+                <ul>
+                    <li>Title: American Cosmic</li>
+                    <li>Author: Dr. Diana Pasulka</li>
+                    <li>Pages: 288 </li>
+                    <li>Read yet: Yes</li>       
+                </ul>
+                    <img src= "./images/american.jpg" alt = "Image of the book American Cosmic by Dr. Diana Pasulka.">
+            </div>
             
-                <div> 
-                    <div class="rating">
-  
-                        
-                        <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
-                        <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
-                        <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
-                        <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
-                        <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
-                      
-                    </div>
-                      <button class = "removeButton">Remove</button>
+            <div class = "ratingRemoveButtonContainer"> 
+                <div class="rating">
+
+                    
+                    <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
+                    <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
+                    <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
+                    <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
+                    <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
+                
                 </div>
+                <button class = "removeButton">Remove</button>
+            </div>
             
         </article>
 
         <article>
+            
+        <div class = "bookInfoImageContainer">
             <ul>
                 <li>Title: Authors of the Impossible</li>
                 <li>Author: Dr. Jeffrey J. Kripal</li>
@@ -48,8 +53,8 @@
                 <li>Read yet: Yes</li>   
             </ul>
                 <img src= "./images/trickster.jpg" alt = "Image of the book Authors of the Impossible by Dr. Jeffrey J. Kripal">
-            
-                <div> 
+        </div>
+                <div class = "ratingRemoveButtonContainer"> 
                     <div class="rating">
   
                         <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
@@ -64,6 +69,9 @@
         </article>
 
         <article>
+            
+            <div class = "bookInfoImageContainer">
+            
             <ul>
                 <li>Title: The Trickster and the Paranormal</li>
                 <li>Author: Dr. George P. Hansen</li>
@@ -71,9 +79,9 @@
                 <li>Read yet: Yes</li>   
             </ul>
                 <img src= "./images/authors.jpg" alt = "Image of the book The Trickster and the Paranormal by Dr. George P. Hansen.">
-            
+        </div>
 
-                <div> 
+                <div class = "ratingRemoveButtonContainer"> 
                     <div class="rating">
   
                         <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
