@@ -48,6 +48,8 @@ li{
     border-radius: 5px;
     padding-left:1rem;
     padding-right: 1rem;
+   
+
 
 }
 
@@ -72,7 +74,7 @@ li{
     
     display:flex;
     flex-direction: column;
-    white-space: nowrap;
+    
     background-color: rgb(235, 237, 243);
     border-top-left-radius:25px;
     border-top-right-radius: 25px;
@@ -120,3 +122,5 @@ li{
     background-color: rgb(178, 184, 217);
     border-radius: 5px;
 }
+
+
