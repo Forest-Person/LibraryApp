@@ -56,7 +56,7 @@ li{
 /*------------Card Articles---------------------*/
 
 .bookInfoImageContainer{
- 
+    
     display:flex;
     flex-direction: column;
     
