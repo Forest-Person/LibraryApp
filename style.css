@@ -46,8 +46,9 @@ li{
 .cardContainer {
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
     grid-gap: 1rem;
+    justify-content: center;
 }
 
 
@@ -59,13 +60,36 @@ li{
     
     display:flex;
     flex-direction: column;
-    
+    white-space: nowrap;
     
 
 }
 
 .bookInfoImageContainer img{
-  align-self: center;
+  align-self: center;         /*stops images from stretching with flex*/
  
  
+}
+
+
+
+
+/*---------Radio buttons and remove button container---------*/
+
+.ratingRemoveButtonContainer {
+
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-right: 1rem;
+    margin-left:1rem;
+    white-space: nowrap;
+}
+
+.rateMe{
+    display:flex;
+    margin:0;
+    justify-content: center;
+    
+    
 }
