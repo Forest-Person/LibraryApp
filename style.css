@@ -15,23 +15,26 @@ li{
 
     display:flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     
 
 }
 
 .addBookButton {
 
-    flex:.5 1 auto;
-    margin-left:5rem;
-    margin-right:1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    flex:0 1 auto;
+    
+    padding:1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
 
 }
 
 .bookHeader {
 
+    font-size: 4rem;
+    margin-left: 1rem;
 
 }
 
