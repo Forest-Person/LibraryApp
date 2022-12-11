@@ -7,3 +7,24 @@ li{
 
     list-style: none;
 }
+
+
+/*--------Header---------*/
+
+.titleAddBookButtonContainer {
+
+    display:flex;
+    justify-content: space-around;
+    
+
+}
+
+.addBookButton {
+
+    flex:.5 1 auto;
+    margin-left:5rem;
+    margin-right:1rem
+
+}
+
+
