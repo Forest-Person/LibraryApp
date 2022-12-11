@@ -10,7 +10,6 @@ html{
 
 
 
-
 /*--------Header Container add book button ad header title---------*/
 
 .titleAddBookButtonContainer {
@@ -61,6 +60,7 @@ li{
     grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
     grid-gap: 1rem;
     justify-content: center;
+    
 }
 
 
@@ -74,6 +74,9 @@ li{
     flex-direction: column;
     white-space: nowrap;
     background-color: rgb(235, 237, 243);
+    border-top-left-radius:25px;
+    border-top-right-radius: 25px;
+    
 
 }
 
@@ -97,6 +100,9 @@ li{
     padding-right: 1rem;
     white-space: nowrap;
     background-color: rgb(235, 237, 243);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
 }
 
 .rateMe{
