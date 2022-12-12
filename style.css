@@ -130,8 +130,25 @@ li{
 }
 
 
-/*---------------Add book submis---------------*/
+/*---------------Add book submission---------------*/
 
 
 
 
+
+
+.bookAddFormInput {
+
+    display:grid;
+    grid-template-rows: 1fr .1fr .1fr;
+   
+    
+    
+}
+.bookInfoForm{
+
+    display: flex;
+    flex-direction: column;
+    
+    
+}
