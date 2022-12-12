@@ -103,7 +103,7 @@ li{
 
     display:flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding-left: 1rem;
     padding-right: 1rem;
     white-space: nowrap;
@@ -128,6 +128,7 @@ li{
     background-color: rgb(178, 184, 217);
     border-radius: 5px;
 }
+
 
 
 /*---------------Add book submission---------------*/
