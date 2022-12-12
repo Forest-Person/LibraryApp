@@ -106,6 +106,51 @@
 
     
     </section>
+
+    <!--<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+</form>-->
+
+    <section class = "addBookForm">
+        
+        <article class = 'userBookInput'>
+
+            <form>
+                <label for = "bookTitle">Book Title:</label>
+                <input type = "text" name = "bookTitle">
+                <label for = "bookAuthor">Book Author:</label>
+                <input type = "text" name = "bookAuthor">
+                <label for = "pages">Pages:</label>
+                <input type = "text" name = "pages">
+                
+                <div class = 'readYetRadioButtons'>
+
+                    <label for = "readYet">Read this?</label>
+                    <label for = "readYet">YES</label>
+                    <input type = "radio" id = 'yesRadio' name = "readYet" value = "yes">
+                    <label for = "readYes">NO</label>
+                    <input type = "radio" id = "noRadio" name = "readYet" value = "no">
+                </div>
+
+                <div class = 'addBookRatingButtons'>
+                    <form> 
+                        <p >rating</p>
+                        <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
+                        <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
+                        <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
+                        <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
+                        <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
+                    </form>
+                </div>
+
+                <input type = "submit">
+
+            </form>
+            </article>
+    </section>
             
 <script src = "./script.js"></script>
 </body>
