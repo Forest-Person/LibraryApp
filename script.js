@@ -1,20 +1,55 @@
-myBooks = []
+bookButton = document.querySelector('.addBookButton')
+
+bookButton.addEventListener('click', addBook)
+
+yesButton = document.querySelectorAll('.yesButton')
+noButton = document.querySelectorAll('.noButton')
+
+
+
+    
+
+yesButton.forEach(function(elem) {elem.addEventListener('click',
+function(input){
+
+    input.target.style.backgroundColor = 'green';
+    input.target.nextElementSibling.style.backgroundColor = 'rgb(170, 172, 179)'; 
+})
+
+})
+
+
+
+noButton.forEach(function(elem){elem.addEventListener('click',
+
+function(input){
+
+    input.target.style.backgroundColor = 'red';
+    input.target.previousElementSibling.style.backgroundColor = 'rgb(170, 172, 179)'; 
+})
+
+})
+
 
 const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564)
 const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)
 const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
 
 
+let myBooks = []
+
 function Book(title,author,pages) {
 
     this.title = title
     this.author = author
     this.pages = pages
-    this.rating = false
+    this.readYet = false
+    this.rating = 0
     //constructor
 }
 
 function addBook() {
+
 
     //add book to library
 }
