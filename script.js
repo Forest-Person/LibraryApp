@@ -39,12 +39,18 @@ addBookButton.addEventListener('click', function (input){
 addBookFormSection.style.display = 'block';
 
 
-
-
 })
 
+const cancelButton = document.querySelector('.exitAddBookForm')  //get the reference to the exit add book form button
 
 
+
+cancelButton.addEventListener('click',
+
+function(){
+    addBookFormSection.style.display = 'None';
+    document.querySelector(".bookAddFormInput").reset();  ///Resets the form inout when cancel button is pressed.
+})
 
 const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564)
 const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)
