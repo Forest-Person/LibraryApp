@@ -12,7 +12,7 @@ const noButton = document.querySelectorAll('.noButton')
 yesButton.forEach(function(elem) {elem.addEventListener('click',
 function(input){
 
-    input.target.style.backgroundColor = 'green';
+    input.target.style.backgroundColor = 'rgb(105, 198, 145)';
     input.target.nextElementSibling.style.backgroundColor = 'rgb(170, 172, 179)'; 
 })
 
@@ -23,7 +23,7 @@ noButton.forEach(function(elem){elem.addEventListener('click',
 
 function(input){
 
-    input.target.style.backgroundColor = 'red';
+    input.target.style.backgroundColor = 'rgb(227, 149, 110)';
     input.target.previousElementSibling.style.backgroundColor = 'rgb(170, 172, 179)'; 
 })
 
@@ -59,7 +59,7 @@ const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
 
 let myBooks = []
 
-function Book(title,author,pages) {
+function Book(title,author,pages) {  //Book object
 
     this.title = title
     this.author = author
