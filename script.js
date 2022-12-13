@@ -1,12 +1,12 @@
-bookButton = document.querySelector('.addBookButton')
+const bookButton = document.querySelector('.addBookButton')
 
 bookButton.addEventListener('click', addBook)
 
 
 //Click yes or no button in book info form and the corresponding element background color
 //will be red for no and green for yes if read yet.
-yesButton = document.querySelectorAll('.yesButton')
-noButton = document.querySelectorAll('.noButton')
+const yesButton = document.querySelectorAll('.yesButton')
+const noButton = document.querySelectorAll('.noButton')
  
 
 yesButton.forEach(function(elem) {elem.addEventListener('click',
@@ -19,7 +19,6 @@ function(input){
 })
 
 
-
 noButton.forEach(function(elem){elem.addEventListener('click',
 
 function(input){
@@ -29,6 +28,21 @@ function(input){
 })
 
 })
+
+//Add book button makes popup form occur
+
+const addBookFormSection = document.querySelector('.addBookForm')
+
+const addBookButton = document.querySelector('.addBookButton') //button to add book makes popup happen
+
+addBookButton.addEventListener('click', function (input){
+addBookFormSection.style.display = 'block'
+
+
+
+})
+
+
 
 
 const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564)
