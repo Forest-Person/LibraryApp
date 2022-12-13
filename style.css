@@ -34,21 +34,24 @@ li{
     flex:0 1 auto;
     
     padding:1rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
     background-color: rgb(80, 87, 122);
     border-radius: 5px;
+    
 }
 
 .bookHeader {
 
-    font-size: 4rem;
+    font-size: 2.5rem;
     background-color: rgb(107, 114, 142);
     border-radius: 5px;
     padding-left:1rem;
     padding-right: 1rem;
-   
+    align-self: center;
+    
+    margin-top: ;
 
 
 }
@@ -142,7 +145,7 @@ li{
 
     display:grid;
     grid-template-rows: 1fr .1fr .1fr;
-   
+    min-width: 250px;
     
     
 }
@@ -150,6 +153,7 @@ li{
 
     display: flex;
     flex-direction: column;
+    
     
     
 }

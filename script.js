@@ -2,12 +2,12 @@ bookButton = document.querySelector('.addBookButton')
 
 bookButton.addEventListener('click', addBook)
 
+
+//Click yes or no button in book info form and the corresponding element background color
+//will be red for no and green for yes if read yet.
 yesButton = document.querySelectorAll('.yesButton')
 noButton = document.querySelectorAll('.noButton')
-
-
-
-    
+ 
 
 yesButton.forEach(function(elem) {elem.addEventListener('click',
 function(input){
