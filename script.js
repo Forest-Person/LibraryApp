@@ -36,7 +36,8 @@ const addBookFormSection = document.querySelector('.addBookForm')
 const addBookButton = document.querySelector('.addBookButton') //button to add book makes popup happen
 
 addBookButton.addEventListener('click', function (input){
-addBookFormSection.style.display = 'block'
+addBookFormSection.style.display = 'block';
+
 
 
 
