@@ -130,15 +130,38 @@ li{
     margin-bottom:.5rem;
     background-color: rgb(178, 184, 217);
     border-radius: 5px;
+    
+    
 }
 
 
 
-/*---------------Add book submission---------------*/
+/*---------------Add book submission popup form---------------*/
+
+
+
+.addBookForm { /*Section for the whole add book form popup.*/
+
+display:none;
+max-width: 25rem;
+position: fixed;
+z-index: 10;
+top:20%;
+left:0;
+background-color: rgb(107, 114, 142);
+padding:.5rem;
+border-radius: 25px;
+border:5px solid rgb(58, 113, 159);
 
 
 
 
+
+
+ 
+
+
+}
 
 
 .bookAddFormInput {
