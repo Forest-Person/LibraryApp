@@ -1,6 +1,6 @@
-const bookButton = document.querySelector('.addBookButton')
+////*****JS file for Library App*****////
 
-bookButton.addEventListener('click', addBook)
+
 
 
 //Click yes or no button in book info form and the corresponding element background color
@@ -43,8 +43,6 @@ addBookFormSection.style.display = 'block';
 
 const cancelButton = document.querySelector('.exitAddBookForm')  //get the reference to the exit add book form button
 
-
-
 cancelButton.addEventListener('click',
 
 function(){
@@ -52,12 +50,14 @@ function(){
     document.querySelector(".bookAddFormInput").reset();  ///Resets the form inout when cancel button is pressed.
 })
 
-const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564)
-const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)
+
+
+const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564) //test book objects for displaying 
+const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)       //new books in the card section
 const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
 
 
-let myBooks = []
+let myBooks = [] //array for storing Book objects
 
 function Book(title,author,pages) {  //Book object
 
@@ -69,11 +69,31 @@ function Book(title,author,pages) {  //Book object
     //constructor
 }
 
-function addBook() {
+const bookButton = document.querySelector('.addBookButton')
 
+bookButton.addEventListener('click', addBook)   //add book button in header fires the add book funciton below 
+
+
+const addBookConstructorButton =  document.querySelector('.addBookConstructorButton')
+
+addBookConstructorButton.addEventListener('click',
+
+function logPress() {
+
+    console.log('pressed add book constructor button.')
+})
+
+/*function addBook() { //funciton tha takes input form bookaddinput form and creates an 
+                     //...new book constructor that can then be placed into array for later display.
+
+    let bookTitle = 
+    let bookAuthor =
+    let bookPages = 
+    let readYet =
+    let rating = 
 
     //add book to library
-}
+}*/
 
 
 /*Write a function that loops through the array and displays each book on the page. 
