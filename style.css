@@ -161,7 +161,7 @@ border:5px solid rgb(143, 165, 183);
 
 }
 
-.readYes {
+.readYes {  /*add padding to yes button to give space the rating title*/
 
     padding-left: .5rem;
 }
@@ -210,8 +210,8 @@ width:15px;
         font-size:1.5rem;
     }
 
-    .addBookButtonCancelButton {
-        padding:.5rem;
-        display:flex;
-        justify-content: space-around;
-    }
+.addBookButtonCancelButton {
+    padding:.5rem;
+    display:flex;
+    justify-content: space-around;
+}

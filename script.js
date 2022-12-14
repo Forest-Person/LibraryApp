@@ -36,7 +36,7 @@ const addBookFormSection = document.querySelector('.addBookForm')
 const addBookButton = document.querySelector('.addBookButton') //button to add book makes popup happen
 
 addBookButton.addEventListener('click', function (input){
-addBookFormSection.style.display = 'block';
+addBookFormSection.style.display = 'block';   //show book form, make it non hidden
 
 
 })
@@ -69,9 +69,9 @@ function Book(title,author,pages) {  //Book object
     //constructor
 }
 
-const bookButton = document.querySelector('.addBookButton')
 
-bookButton.addEventListener('click', addBook)   //add book button in header fires the add book funciton below 
+
+  //add book button in header fires the add book funciton below 
 
 
 const addBookConstructorButton =  document.querySelector('.addBookConstructorButton')
@@ -80,7 +80,7 @@ addBookConstructorButton.addEventListener('click',
 
 function logPress() {
 
-    console.log('pressed add book constructor button.')
+    console.log(document.querySelector("bookAddFormInput").elements["bookTitle"])
 })
 
 /*function addBook() { //funciton tha takes input form bookaddinput form and creates an 
