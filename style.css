@@ -200,7 +200,7 @@ width:15px;
     width:15px;
 }
 
-.addBookForm [type="submit"] {
+.addBookForm [type="submit"] { /* change font of the submit button in the add book form*/
 
     font-size: 1.5rem;
 

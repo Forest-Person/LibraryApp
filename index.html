@@ -32,11 +32,11 @@
                 <div class="rating">
 
                    <form> 
-                    <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
-                    <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
-                    <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
-                    <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
-                    <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
+                    <input type="radio" name="cardRating" value="5" id="5">  <label for="cardRating">1 </label>
+                    <input type="radio" name="cardRating" value="4" id="4">  <label for="cardRating">2 </label>
+                    <input type="radio" name="cardRating" value="3" id="3">  <label for="cardRating">3 </label>
+                    <input type="radio" name="cardRating" value="2" id="2">  <label for="cardRating">4 </label>
+                    <input type="radio" name="cardRating" value="1" id="1">  <label for="cardRating">5 </label>
                     <p class = "rateMe">rating</p>
                 </form>
                 </div>
@@ -60,11 +60,11 @@
                     <div class="rating">
   
                         <form> 
-                            <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
-                            <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
-                            <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
-                            <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
-                            <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
+                            <input type="radio" name="cardRating" value="5" id="5">  <label for="cardRating">1 </label>
+                    <input type="radio" name="cardRating" value="4" id="4">  <label for="cardRating">2 </label>
+                    <input type="radio" name="cardRating" value="3" id="3">  <label for="cardRating">3 </label>
+                    <input type="radio" name="cardRating" value="2" id="2">  <label for="cardRating">4 </label>
+                    <input type="radio" name="cardRating" value="1" id="1">  <label for="cardRating">5 </label>
                             <p class = "rateMe">rating</p>
                         </form>
 
@@ -90,11 +90,11 @@
                     <div class="rating">
   
                         <form> 
-                            <input type="radio" name="rating" value="5" id="5">  <label for="5">1 </label>
-                            <input type="radio" name="rating" value="4" id="4">  <label for="4">2 </label>
-                            <input type="radio" name="rating" value="3" id="3">  <label for="3">3 </label>
-                            <input type="radio" name="rating" value="2" id="2">  <label for="2">4 </label>
-                            <input type="radio" name="rating" value="1" id="1">  <label for="1">5 </label>
+                            <input type="radio" name="cardRating" value="5" id="5">  <label for="cardRating">1 </label>
+                    <input type="radio" name="cardRating" value="4" id="4">  <label for="cardRating">2 </label>
+                    <input type="radio" name="cardRating" value="3" id="3">  <label for="cardRating">3 </label>
+                    <input type="radio" name="cardRating" value="2" id="2">  <label for="cardRating">4 </label>
+                    <input type="radio" name="cardRating" value="1" id="1">  <label for="cardRating">5 </label>
                             <p class = "rateMe">rating</p>
                         </form>
 
@@ -112,33 +112,34 @@
         
         <article>
 
-            <form class = bookAddFormInput>
+            <form class = 'bookAddFormInput'>
                 <div class = 'bookInfoForm'>
                     <label for = "bookTitle">Book Title:</label>
-                    <input  type = "text" name = "bookTitle"> <!--********-->
+                    <input  type = "text" name = "bookTitle" class = "bookTitleInput"> <!--********-->
                     <label for = "bookAuthor">Book Author:</label>
-                    <input type = "text" name = "bookAuthor">
+                    <input type = "text" name = "bookAuthor" class = "bookAuthorInput">
                     <label for = "pages">Pages:</label>
-                    <input type = "text" name = "pages">
+                    <input type = "text" name = "pages" class = "bookPagesInput">
                 </div>
                 
-                <div class = 'readYetRadioButtons'>
-
-                    <label for = "readYet">Read this?</label>
-                    <label class = "readYes" for = "readYet">YES</label>
-                    <input type = "radio" id = 'yesRadio' name = "readYet" value = "yes">
-                    <label for = "readYet">NO</label>
-                    <input type = "radio" id = "noRadio" name = "readYet" value = "no">
+                <div >
+                    <form class = 'readYetRadioButtons'>
+                        <label for = "readYet">Read this?</label>
+                        <label class = "readYes" for = "readYet">YES</label>
+                        <input type = "radio" id = 'yesRadio' name = "readYet" value = "yes">
+                        <label for = "readYet">NO</label>
+                        <input type = "radio" id = "noRadio" name = "readYet" value = "no">
+                    <form>
                 </div>
 
                 <div class = 'addBookRatingButtons'>
                     <form> 
                         <p>Rating</p>
-                        <input type="radio" name="rating" value="5" id="5">  <label for="rating">1 </label>
-                        <input type="radio" name="rating" value="4" id="4">  <label for="rating">2 </label>
-                        <input type="radio" name="rating" value="3" id="3">  <label for="rating">3 </label>
-                        <input type="radio" name="rating" value="2" id="2">  <label for="rating">4 </label>
-                        <input type="radio" name="rating" value="1" id="1">  <label for="rating">5 </label>
+                        <input type="radio" name="addBookRating" value="5" id="5">  <label for="addBookRating">1 </label>
+                        <input type="radio" name="addBookRating" value="4" id="4">  <label for="addBookRating">2 </label>
+                        <input type="radio" name="addBookRating" value="3" id="3">  <label for="addBookRating">3 </label>
+                        <input type="radio" name="addBookRating" value="2" id="2">  <label for="addBookRating">4 </label>
+                        <input type="radio" name="addBookRating" value="1" id="1">  <label for="addBookRating">5 </label>
                     </form>
                 </div>
 

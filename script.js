@@ -76,20 +76,27 @@ function Book(title,author,pages) {  //Book object
 
 const addBookConstructorButton =  document.querySelector('.addBookConstructorButton')
 
-addBookConstructorButton.addEventListener('click',
+addBookConstructorButton.addEventListener('click',  //experimenting with getting text content of add book form 
 
 function logPress() {
 
-    console.log(document.querySelector("bookAddFormInput").elements["bookTitle"])
+    console.log(document.querySelector(".bookTitleInput").value)
+    console.log(document.querySelector(".bookAuthorInput").value)
+    console.log(document.querySelector(".bookPagesInput").value)
+    console.log(document.querySelector('input[name="readYet"]:checked').value)
+    
+    
+
+    
 })
 
 /*function addBook() { //funciton tha takes input form bookaddinput form and creates an 
                      //...new book constructor that can then be placed into array for later display.
 
-    let bookTitle = 
-    let bookAuthor =
-    let bookPages = 
-    let readYet =
+    let bookTitle = document.querySelector(".bookTitleInput").value
+    let bookAuthor = document.querySelector(".bookAuthorInput").value
+    let bookPages = document.querySelector(".bookPagesInput").value
+    let readYet = 
     let rating = 
 
     //add book to library
