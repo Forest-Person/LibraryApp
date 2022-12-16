@@ -194,10 +194,23 @@ height:15px;
 width:15px;
 }
 
-.readYetRadioButtons [type="radio"]{
+.yesNoRadioButtons [type="radio"]{
 
     height:15px;
     width:15px;
+}
+
+.defaultUnknownRadioButton {
+
+    display: none !important;
+}                             /*Remove hidden default raio buttons from DOM view. 
+                                They are just for code flow to not give null result 
+                                in event listener. important is needed to override
+                                default inline block styling*/
+
+.defaultUnratedRadioButton{
+
+    display:none !important;
 }
 
 .addBookForm [type="submit"] { /* change font of the submit button in the add book form*/

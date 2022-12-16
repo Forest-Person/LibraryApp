@@ -122,25 +122,27 @@
                     <input type = "text" name = "pages" class = "bookPagesInput">
                 </div>
                 
-                <div >
-                    <form class = 'readYetRadioButtons'>
+                <div class = 'yesNoRadioButtons'>
+                   
                         <label for = "readYet">Read this?</label>
                         <label class = "readYes" for = "readYet">YES</label>
-                        <input type = "radio" id = 'yesRadio' name = "readYet" value = "yes">
+                        <input class = 'defaultUnknowRadioButton' type = "radio" name = 'readYet' checked value = 'Unknown'>
+                        <input type = "radio" id = "yesRadio" name = "readYet" value = "yes">
                         <label for = "readYet">NO</label>
                         <input type = "radio" id = "noRadio" name = "readYet" value = "no">
-                    <form>
+                    
                 </div>
 
                 <div class = 'addBookRatingButtons'>
-                    <form> 
+                    
                         <p>Rating</p>
+                        <input class = "defaultUnratedRadioButton" type = "radio" name="addBookRating" value = 'Un-rated' checked>
                         <input type="radio" name="addBookRating" value="1" id="1">  <label for="addBookRating">1 </label>
                         <input type="radio" name="addBookRating" value="2" id="2">  <label for="addBookRating">2 </label>
                         <input type="radio" name="addBookRating" value="3" id="3">  <label for="addBookRating">3 </label>
                         <input type="radio" name="addBookRating" value="4" id="4">  <label for="addBookRating">4 </label>
                         <input type="radio" name="addBookRating" value="5" id="5">  <label for="addBookRating">5 </label>
-                    </form>
+                    
                 </div>
 
                 <div class = 'addBookButtonCancelButton'>

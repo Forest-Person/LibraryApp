@@ -5,8 +5,8 @@
 
 //Click yes or no button in book info form and the corresponding element background color
 //will be red for no and green for yes if read yet.
-const yesButton = document.querySelectorAll('.yesButton')
-const noButton = document.querySelectorAll('.noButton')
+const yesButton = document.querySelectorAll('.yesButton');
+const noButton = document.querySelectorAll('.noButton');
  
 
 yesButton.forEach(function(elem) {elem.addEventListener('click',
@@ -31,9 +31,9 @@ function(input){
 
 //Add book button makes popup form occur
 
-const addBookFormSection = document.querySelector('.addBookForm')
+const addBookFormSection = document.querySelector('.addBookForm');
 
-const addBookButton = document.querySelector('.addBookButton') //button to add book makes popup happen
+const addBookButton = document.querySelector('.addBookButton') ;//button to add book makes popup happen
 
 addBookButton.addEventListener('click', function (input){
 addBookFormSection.style.display = 'block';   //show book form, make it non hidden
@@ -52,55 +52,54 @@ function(){
 
 
 
-const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564) //test book objects for displaying 
-const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)       //new books in the card section
-const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288)
+const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564) ;//test book objects for displaying 
+const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)  ;     //new books in the card section
+const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288);
 
 
-let myBooks = [] //array for storing Book objects
+let myBooksArray = [] //array for storing Book objects
 
-function Book(title,author,pages) {  //Book object
+function Book(title,author,pages,readYet,rating) {  //Book object
 
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.readYet = false
-    this.rating = 0
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readYet = readYet;
+    this.rating = rating;
     //constructor
 }
 
 
 
-  //add book button in header fires the add book funciton below 
+  //add book constructor below button in header fires the add book funciton below which creates a javascript object and
+  //will then fill in the details of a new html card. 
 
 
 const addBookConstructorButton =  document.querySelector('.addBookConstructorButton')
 
-addBookConstructorButton.addEventListener('click',  //experimenting with getting text content of add book form 
+addBookConstructorButton.addEventListener('click', function addBook(event) { //funciton tha takes input form bookaddinput form and creates an 
+    //...new book constructor that can then be placed into array for later display.
+event.preventDefault()
+let bookTitle = document.querySelector(".bookTitleInput").value;
+let bookAuthor = document.querySelector(".bookAuthorInput").value;
+let bookPages = document.querySelector(".bookPagesInput").value;
 
-function logPress() {
 
-    console.log(document.querySelector(".bookTitleInput").value)
-    console.log(document.querySelector(".bookAuthorInput").value)
-    console.log(document.querySelector(".bookPagesInput").value)
-    console.log(document.querySelector('input[name="readYet"]:checked').value)
-    
-    
+let readYet = document.querySelector("input[name='readYet']:checked").value
+let rating = document.querySelector("input[name='addBookRating']:checked").value
 
-    
+
+
+
+myBooksArray.push(new Book(bookTitle,bookAuthor,bookPages,readYet,rating))
+document.querySelector(".bookAddFormInput").reset()
+console.log(myBooksArray)
+//add book to library
 })
 
-/*function addBook() { //funciton tha takes input form bookaddinput form and creates an 
-                     //...new book constructor that can then be placed into array for later display.
 
-    let bookTitle = document.querySelector(".bookTitleInput").value
-    let bookAuthor = document.querySelector(".bookAuthorInput").value
-    let bookPages = document.querySelector(".bookPagesInput").value
-    let readYet = 
-    let rating = 
 
-    //add book to library
-}*/
+
 
 
 /*Write a function that loops through the array and displays each book on the page. 
