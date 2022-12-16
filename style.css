@@ -65,6 +65,7 @@ li{
     grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
     grid-gap: 1rem;
     justify-content: center;
+    margin-top: 1rem;
     
 }
 
@@ -81,6 +82,8 @@ li{
     background-color: rgb(235, 237, 243);
     border-top-left-radius:25px;
     border-top-right-radius: 25px;
+    margin-left:1rem;
+    margin-right:1rem;
     
 
 }
@@ -113,6 +116,8 @@ li{
     background-color: rgb(235, 237, 243);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    margin-left:1rem;
+    margin-right: 1rem;
     
 }
 
