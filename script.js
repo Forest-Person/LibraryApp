@@ -83,16 +83,24 @@ event.preventDefault()
 let bookTitle = document.querySelector(".bookTitleInput").value;
 let bookAuthor = document.querySelector(".bookAuthorInput").value;
 let bookPages = document.querySelector(".bookPagesInput").value;
+let readYet = document.querySelector("input[name='readYet']:checked").value;
+let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
+const addFormInput = document.querySelector(".bookAddFormInput")
 
-let readYet = document.querySelector("input[name='readYet']:checked").value
-let rating = document.querySelector("input[name='addBookRating']:checked").value
+if (bookAuthor === '' || bookTitle === '' || bookPages === '') {addFormInput.insertAdjacentHTML("beforebegin",
+'<p class = "noInputWarning" style = "margin:0; padding:0;"> *Please Enter All fields</p>');
 
+function cancel(){let noInputWarning = document.querySelector(".noInputWarning"); //remove cancel warning from dom after 2 seconds
+noInputWarning.parentNode.removeChild(noInputWarning)}
+return setTimeout(///removes cancel warning from dom
+     cancel, 2000
+)
+}
 
-
-
-myBooksArray.push(new Book(bookTitle,bookAuthor,bookPages,readYet,rating))
-document.querySelector(".bookAddFormInput").reset()
+myBooksArray.push(new Book(bookTitle,bookAuthor,bookPages,readYet,rating)) //New book object to add to mybooks array
+addFormInput.reset() //reset form after clicking add book button
+addBookFormSection.style.display = 'None';
 console.log(myBooksArray)
 //add book to library
 })
