@@ -79,21 +79,15 @@ let myBooksArray = [testBook1,testBook2,testBook3] //array for storing Book obje
 ///VVVVV///an insertadjacenthtml method which will load the dom with presumably when we want to remove this
 ///VVVVV///we cna use a setAttribue function on this 
 
-
-
-
-////////////////
-//////////////
-/////////////////
 //////////////
 //VVVVVVVVVVVVVVVVVVVVthis is how to target the dataset attribute that has a specific value of the raiod button checked
 console.log(document.querySelector("[data-book-title='Authors of the Impossible'] input[name='cardRating']:checked"))
 
+ 
 
 
 
-
-  //add book constructor below button in header fires the add book funciton below which creates a javascript object and
+//add book constructor button in header fires the add book function below which creates a javascript object and
   //will then fill in the details of a new html card. 
 
 
@@ -108,7 +102,8 @@ let bookPages = document.querySelector(".bookPagesInput").value;
 let readYet = document.querySelector("input[name='readYet']:checked").value;
 let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
-console.log(readYet)///check what the value will be tha tis logg
+console.log(bookTitle)
+console.log(readYet)///check what the value of the checked radio button will be in this log console
 
 const addFormInput = document.querySelector(".bookAddFormInput")
 
@@ -128,16 +123,18 @@ addBookFormSection.style.display = 'None';//remove book add form from display af
 
 function cardInsert() { 
 
-
-
     //The below template literal is used to append a new element to the dom based on input form add book form
     //and then insertadjacenthtml method is used. Not certain on whether or not we are safe from XSS attacks(cross site scripting) look into this more
     //
 
+    //the dataset attribute for the data-article-title below will be used to target individual 
+    //elements for removal when the remove button is pressed, the data-rating-title will be used to mark the correct backround color of the yes or no button
+    //designating whether the book has been read or not in the main html file. the test books will eventually be removed and then a for each will populate 
+    //the main html file with the book stored in the my books array.
     
     let cardFormTemplate = `
     
-    <article>
+    <article data-article-title = "${bookTitle}">  
                     
                 <div class = "bookInfoImageContainer">
                     <ul>
@@ -152,7 +149,7 @@ function cardInsert() {
                 <div class = "ratingRemoveButtonContainer"> 
                     <div class="rating">
     
-                       <form> 
+                       <form data-rating-title = ${bookTitle} 
                         <input type="radio" name="cardRating" value="1" >  <label for="cardRating">1 </label>
                         <input type="radio" name="cardRating" value="2" >  <label for="cardRating">2 </label>
                         <input type="radio" name="cardRating" value="3" >  <label for="cardRating">3 </label>
@@ -167,14 +164,10 @@ function cardInsert() {
             </article>
     
     `
-    const container = document.querySelector(".cardContainer")  /////CSS WAS BEING APPLIED MY funcitons above were not being applied to yes and no buttons becuase the only ran once.
+    const container = document.querySelector(".cardContainer")  /////CSS WAS BEING APPLIED by functons above were not being 
+                                                                //applied to yes and no buttons becuase the only ran once 
+                                                                //because they run in the global scope on initial dom load.
     container.insertAdjacentHTML("beforeend", cardFormTemplate)
-
-    //add a method or logic that changes the backround color of the yes or no buttons on added cards based on the addbookform input
-    //also do the same to transfer the value of the ratings to the active cards in the visible main html.
-
-    
-    
     
     }
 
@@ -182,13 +175,11 @@ cardInsert()  ///run inner function  that inserts new card elements based on inp
 yesNoButtonColorChange()//re run funciton that applies coloring logic to yes and no buttons on forms saying whther read or not.
 
 
+
+//TO DO//
+
 ///could place random pictures from unsplash url into book spaces and with set sizes too or at least make them small sizes
-///and also make them
-
-
-
-
-//add book to library
+///and also make them add book to library
 })
 
 
