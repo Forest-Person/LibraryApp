@@ -82,8 +82,12 @@ let myBooksArray = [testBook1,testBook2,testBook3] //array for storing Book obje
 
 
 
-
-
+////////////////
+//////////////
+/////////////////
+//////////////
+//VVVVVVVVVVVVVVVVVVVVthis is how to target the dataset attribute that has a specific value of the raiod button checked
+console.log(document.querySelector("[data-book-title='Authors of the Impossible'] input[name='cardRating']:checked"))
 
 
 
@@ -104,10 +108,12 @@ let bookPages = document.querySelector(".bookPagesInput").value;
 let readYet = document.querySelector("input[name='readYet']:checked").value;
 let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
+console.log(readYet)
+
 const addFormInput = document.querySelector(".bookAddFormInput")
 
 if (bookAuthor === '' || bookTitle === '' || bookPages === '') {addFormInput.insertAdjacentHTML("beforebegin",
-'<p class = "noInputWarning" style = "margin:0; padding:0;"> *Please Enter All fields</p>');
+'<p class = "noInputWarning" style = "margin:0; padding:0;"> *Please Enter All fields</p>'); //if no input text in add book form
 
 function cancel(){let noInputWarning = document.querySelector(".noInputWarning"); //remove cancel warning from dom after 2 seconds
 noInputWarning.parentNode.removeChild(noInputWarning)}
@@ -126,6 +132,12 @@ function cardInsert() {
 
     //The below template literal is used to append a new element to the dom based on input form add book form
     //and then insertadjacenthtml method is used. Not certain on whether or not we are safe from XSS attacks(cross site scripting) look into this more
+    //
+    
+    
+    
+    
+    
     let cardFormTemplate = `
     
     <article>
