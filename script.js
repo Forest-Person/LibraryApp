@@ -108,7 +108,7 @@ let bookPages = document.querySelector(".bookPagesInput").value;
 let readYet = document.querySelector("input[name='readYet']:checked").value;
 let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
-console.log(readYet)
+console.log(readYet)///check what the value will be tha tis logg
 
 const addFormInput = document.querySelector(".bookAddFormInput")
 
@@ -124,7 +124,7 @@ return setTimeout(///removes cancel warning from dom
 
 myBooksArray.push(new Book(bookTitle,bookAuthor,bookPages,readYet,rating)) //New book object to add to mybooks array
 addFormInput.reset() //reset form after clicking add book button
-addBookFormSection.style.display = 'None';
+addBookFormSection.style.display = 'None';//remove book add form from display after reset.
 
 function cardInsert() { 
 
@@ -133,10 +133,7 @@ function cardInsert() {
     //The below template literal is used to append a new element to the dom based on input form add book form
     //and then insertadjacenthtml method is used. Not certain on whether or not we are safe from XSS attacks(cross site scripting) look into this more
     //
-    
-    
-    
-    
+
     
     let cardFormTemplate = `
     
@@ -156,11 +153,11 @@ function cardInsert() {
                     <div class="rating">
     
                        <form> 
-                        <input type="radio" name="cardRating" value="1" id="1">  <label for="cardRating">1 </label>
-                        <input type="radio" name="cardRating" value="2" id="2">  <label for="cardRating">2 </label>
-                        <input type="radio" name="cardRating" value="3" id="3">  <label for="cardRating">3 </label>
-                        <input type="radio" name="cardRating" value="4" id="4">  <label for="cardRating">4 </label>
-                        <input type="radio" name="cardRating" value="5" id="5">  <label for="cardRating">5 </label>
+                        <input type="radio" name="cardRating" value="1" >  <label for="cardRating">1 </label>
+                        <input type="radio" name="cardRating" value="2" >  <label for="cardRating">2 </label>
+                        <input type="radio" name="cardRating" value="3" >  <label for="cardRating">3 </label>
+                        <input type="radio" name="cardRating" value="4" >  <label for="cardRating">4 </label>
+                        <input type="radio" name="cardRating" value="5" >  <label for="cardRating">5 </label>
                         <p class = "rateMe">rating</p>
                     </form>
                     </div>
@@ -172,6 +169,9 @@ function cardInsert() {
     `
     const container = document.querySelector(".cardContainer")  /////CSS WAS BEING APPLIED MY funcitons above were not being applied to yes and no buttons becuase the only ran once.
     container.insertAdjacentHTML("beforeend", cardFormTemplate)
+
+    //add a method or logic that changes the backround color of the yes or no buttons on added cards based on the addbookform input
+    //also do the same to transfer the value of the ratings to the active cards in the visible main html.
 
     
     
