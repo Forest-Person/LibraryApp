@@ -2,7 +2,7 @@
 
 
 
-
+function yesNoButtonColorChange(){
 //Click yes or no button in book info form and the corresponding element background color
 //will be red for no and green for yes if read yet.
 const yesButton = document.querySelectorAll('.yesButton');
@@ -28,6 +28,10 @@ function(input){
 })
 
 })
+}
+
+yesNoButtonColorChange() ///run yes no color button logic once on dom load
+
 
 //Add book button makes popup form occur
 
@@ -51,14 +55,6 @@ function(){
 })
 
 
-
-const testBook1 = Book('The Trickster and the Paranormal','George P. Hansen', 564) ;//test book objects for displaying 
-const testBook2 = Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)  ;     //new books in the card section
-const testBopok3 = Book('American Cosmic, Dr. Diana Pasulka', 288);
-
-
-let myBooksArray = [] //array for storing Book objects
-
 function Book(title,author,pages,readYet,rating) {  //Book object
 
     this.title = title;
@@ -66,8 +62,30 @@ function Book(title,author,pages,readYet,rating) {  //Book object
     this.pages = pages;
     this.readYet = readYet;
     this.rating = rating;
+    
     //constructor
 }
+
+
+
+const testBook1 =new Book('The Trickster and the Paranormal','George P. Hansen', 564) ;//test book objects for displaying 
+const testBook2 =new Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)  ;     //new books in the card section
+const testBook3 =new Book('American Cosmic, Dr. Diana Pasulka', 288);
+
+
+let myBooksArray = [testBook1,testBook2,testBook3] //array for storing Book objects
+
+///VVVVV///for each loop in a function that loops through all the book objects and adds those objects properties to 
+///VVVVV///an insertadjacenthtml method which will load the dom with presumably when we want to remove this
+///VVVVV///we cna use a setAttribue function on this 
+
+
+
+
+
+
+
+
 
 
 
@@ -101,7 +119,63 @@ return setTimeout(///removes cancel warning from dom
 myBooksArray.push(new Book(bookTitle,bookAuthor,bookPages,readYet,rating)) //New book object to add to mybooks array
 addFormInput.reset() //reset form after clicking add book button
 addBookFormSection.style.display = 'None';
-console.log(myBooksArray)
+
+function cardInsert() { 
+
+
+
+    //The below template literal is used to append a new element to the dom based on input form add book form
+    //and then insertadjacenthtml method is used. Not certain on whether or not we are safe from XSS attacks(cross site scripting) look into this more
+    let cardFormTemplate = `
+    
+    <article>
+                    
+                <div class = "bookInfoImageContainer">
+                    <ul>
+                        <li>Title: ${bookTitle}</li>
+                        <li>Author: ${bookAuthor}</li>
+                        <li>Pages: ${bookPages} </li>
+                        <li>Read yet: <button class = 'yesButton'>Yes</button><button class = 'noButton'>No</button></li>       
+                    </ul>
+                        <img src= # height=232px width=232 alt ='' >
+                </div>
+                
+                <div class = "ratingRemoveButtonContainer"> 
+                    <div class="rating">
+    
+                       <form> 
+                        <input type="radio" name="cardRating" value="1" id="1">  <label for="cardRating">1 </label>
+                        <input type="radio" name="cardRating" value="2" id="2">  <label for="cardRating">2 </label>
+                        <input type="radio" name="cardRating" value="3" id="3">  <label for="cardRating">3 </label>
+                        <input type="radio" name="cardRating" value="4" id="4">  <label for="cardRating">4 </label>
+                        <input type="radio" name="cardRating" value="5" id="5">  <label for="cardRating">5 </label>
+                        <p class = "rateMe">rating</p>
+                    </form>
+                    </div>
+                    <button class = "removeButton">Remove</button>
+                </div>
+                
+            </article>
+    
+    `
+    const container = document.querySelector(".cardContainer")  /////CSS WAS BEING APPLIED MY funcitons above were not being applied to yes and no buttons becuase the only ran once.
+    container.insertAdjacentHTML("beforeend", cardFormTemplate)
+
+    
+    
+    
+    }
+
+cardInsert()  ///run inner function  that inserts new card elements based on input into the add book form
+yesNoButtonColorChange()//re run funciton that applies coloring logic to yes and no buttons on forms saying whther read or not.
+
+
+///could place random pictures from unsplash url into book spaces and with set sizes too or at least make them small sizes
+///and also make them
+
+
+
+
 //add book to library
 })
 
