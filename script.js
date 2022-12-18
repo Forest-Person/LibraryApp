@@ -1,5 +1,8 @@
 ////*****JS file for Library App*****////
 
+//use event delegation to check fo remove b utton as target then remove the whole article card element
+//this would be to remove cards when the user clicks on the remove button iunside of the cards.
+
 
 
 function yesNoButtonColorChange(){
@@ -49,9 +52,11 @@ const cancelButton = document.querySelector('.exitAddBookForm')  //get the refer
 
 cancelButton.addEventListener('click',
 
-function(){
+function(event){
+    event.preventDefault()
     addBookFormSection.style.display = 'None';
     document.querySelector(".bookAddFormInput").reset();  ///Resets the form inout when cancel button is pressed.
+
 })
 
 
@@ -66,8 +71,6 @@ function Book(title,author,pages,readYet,rating) {  //Book object
     //constructor
 }
 
-
-
 const testBook1 =new Book('The Trickster and the Paranormal','George P. Hansen', 564) ;//test book objects for displaying 
 const testBook2 =new Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)  ;     //new books in the card section
 const testBook3 =new Book('American Cosmic, Dr. Diana Pasulka', 288);
@@ -78,14 +81,6 @@ let myBooksArray = [testBook1,testBook2,testBook3] //array for storing Book obje
 ///VVVVV///for each loop in a function that loops through all the book objects and adds those objects properties to 
 ///VVVVV///an insertadjacenthtml method which will load the dom with presumably when we want to remove this
 ///VVVVV///we cna use a setAttribue function on this 
-
-//////////////
-//VVVVVVVVVVVVVVVVVVVVthis is how to target the dataset attribute that has a specific value of the raiod button checked
-console.log(document.querySelector("[data-book-title='Authors of the Impossible'] input[name='cardRating']:checked"))
-
- 
-
-
 
 //add book constructor button in header fires the add book function below which creates a javascript object and
   //will then fill in the details of a new html card. 
@@ -102,8 +97,7 @@ let bookPages = document.querySelector(".bookPagesInput").value;
 let readYet = document.querySelector("input[name='readYet']:checked").value;
 let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
-console.log(bookTitle)
-console.log(readYet)///check what the value of the checked radio button will be in this log console
+
 
 const addFormInput = document.querySelector(".bookAddFormInput")
 
@@ -141,14 +135,16 @@ function cardInsert() {
                         <li>Title: ${bookTitle}</li>
                         <li>Author: ${bookAuthor}</li>
                         <li>Pages: ${bookPages} </li>
-                        <li>Read yet: <button class = 'yesButton'>Yes</button><button class = 'noButton'>No</button></li>       
+                        <li>Read yet: <button class = 'yesButton'>Yes</button>
+                        <button class = 'noButton'>No</button>
+                        </li>       
                     </ul>
-                        <img src= # height=232px width=232 alt ='' >
+                        <img src= "https://source.unsplash.com/random?sig=${+ Math.random()}'" style = 'max-width:100%; max-height:232px;'  alt ='' >
                 </div>
                 
                 <div class = "ratingRemoveButtonContainer"> 
                     <div class="rating">
-    
+     
                        <form data-rating-title = ${bookTitle} 
                         <input type="radio" name="cardRating" value="1" >  <label for="cardRating">1 </label>
                         <input type="radio" name="cardRating" value="2" >  <label for="cardRating">2 </label>
@@ -174,17 +170,15 @@ function cardInsert() {
 cardInsert()  ///run inner function  that inserts new card elements based on input into the add book form
 yesNoButtonColorChange()//re run funciton that applies coloring logic to yes and no buttons on forms saying whther read or not.
 
+//if statement for yes no button in main html cards and also transfer rating to main html cards from bookadd form inputs
+//uses dataset selector and yes or no button seelector to choose the right thing to delete
 
-
+if (readYet == 'yes') {document.querySelector(`[data-article-title=${bookTitle}] .yesButton`).style.backgroundColor = "rgb(105, 198, 145"}
+else if(readYet == 'no') {document.querySelector(`[data-article-title=${bookTitle}] .noButton`).style.backgroundColor = "rgb(227, 149, 110)"}
 //TO DO//
 
-///could place random pictures from unsplash url into book spaces and with set sizes too or at least make them small sizes
-///and also make them add book to library
+
 })
-
-
-
-
 
 
 /*Write a function that loops through the array and displays each book on the page. 
