@@ -90,7 +90,7 @@ const addBookConstructorButton =  document.querySelector('.addBookConstructorBut
 
 addBookConstructorButton.addEventListener('click', function addBook(event) { //funciton tha takes input form bookaddinput form and creates an 
     //...new book constructor that can then be placed into array for later display.
-event.preventDefault()
+event.preventDefault()//must prevent default event bacause it will reload page 
 let bookTitle = document.querySelector(".bookTitleInput").value;
 let bookAuthor = document.querySelector(".bookAuthorInput").value;
 let bookPages = document.querySelector(".bookPagesInput").value;
@@ -145,7 +145,7 @@ function cardInsert() {
                 <div class = "ratingRemoveButtonContainer"> 
                     <div class="rating">
      
-                       <form data-rating-title = ${bookTitle} 
+                       <form data-rating-title = ${bookTitle}>
                         <input type="radio" name="cardRating" value="1" >  <label for="cardRating">1 </label>
                         <input type="radio" name="cardRating" value="2" >  <label for="cardRating">2 </label>
                         <input type="radio" name="cardRating" value="3" >  <label for="cardRating">3 </label>
@@ -176,6 +176,13 @@ yesNoButtonColorChange()//re run funciton that applies coloring logic to yes and
 if (readYet == 'yes') {document.querySelector(`[data-article-title=${bookTitle}] .yesButton`).style.backgroundColor = "rgb(105, 198, 145"}
 else if(readYet == 'no') {document.querySelector(`[data-article-title=${bookTitle}] .noButton`).style.backgroundColor = "rgb(227, 149, 110)"}
 //TO DO//
+
+//below element selector grabs the element based on the object created above and then set the checked attribute to 
+//true based on the used input in the add book form
+
+let ratingButtonValue = document.querySelector(`[data-rating-title=${bookTitle}] input[name='cardRating'][value = '${rating}']`)
+ratingButtonValue.checked = true
+console.log(ratingButtonValue.value)
 
 
 })
