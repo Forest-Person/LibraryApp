@@ -155,7 +155,7 @@ function cardInsert() {
                         <p class = "rateMe">rating</p>
                     </form>
                     </div>
-                    <button class = "removeButton">Remove</button>
+                    <button class = "removeButton" data-remove-button =${bookTitle}>Remove</button>
                 </div>
                 
             </article>
@@ -187,18 +187,38 @@ else if(readYet == 'no') {document.querySelector(`[data-article-title=${bookTitl
 
 let ratingButtonValue = document.querySelector(`[data-rating-title=${bookTitle}] input[name='cardRating'][value = '${rating}']`)
 ratingButtonValue.checked = true
-console.log(ratingButtonValue.value)
+
 
 
 })
 
 
-function removeArticleCard() {
+function removeArticleCard() { /////This funciton removes whole cards from the cards sections based on the e.target.closest('article') method
+    //hwihc looks for the closest ancestor matching the wanted selector. This funciton also finds the index of the object with the key value that equals the name of the
+    //dataset attribute which was named at object creation based on the value of the addBookForm user input.
+
 removeButton = document.querySelectorAll('.removeButton')
 
 removeButton.forEach ( (input)=> { input.addEventListener('click', (e) => {
 
-    e.target.closest('article').remove()
+    e.target.closest('article').remove()//removes targeted ".removeButton" ancestor article element from card display
+
+  let bookValueReference =  e.target.getAttribute('data-remove-button')
+
+  console.log(bookValueReference)
+
+  const indexOfObject = myBooksArray.findIndex(object => {
+    return object.title === bookValueReference;
+  });
+  
+  console.log(indexOfObject); 
+  
+  myBooksArray.splice(indexOfObject, 1);
+  
+
+console.log(myBooksArray) // 👉️ [{id: 1}, {id: 5}]
+
+    
 
 })
 })
@@ -206,24 +226,3 @@ removeButton.forEach ( (input)=> { input.addEventListener('click', (e) => {
 }
 
 
-/*Write a function that loops through the array and displays each book on the page. 
-You can display them in some sort of table, or each on their own “card”. 
-It might help for now to manually add a few books to your array so you can see the display.
-
-Add a “NEW BOOK” button that brings up a form allowing users to input the details for 
-the new book: author, title, number of pages, whether it’s been read 
-and anything else you might want.
-
-
-You will most likely encounter an issue where submitting your form will not do what you expect it to do. 
-That’s because the submit input tries to send the data to a server by default. 
-Read up on the event.preventDefault documentation again and see how.
-
-Add a button on each book’s display to remove the book from the library.
-
-You will need to associate your DOM elements with the actual book objects in some way. 
-
-One easy solution is giving them a data-attribute that corresponds to the index of the library array.
-
-Add a button on each book’s display to change its read status.
-To facilitate this you will want to create the function that toggles a book’s read status on your Book prototype instance.*/
