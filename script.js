@@ -3,7 +3,8 @@
 //use event delegation to check fo remove b utton as target then remove the whole article card element
 //this would be to remove cards when the user clicks on the remove button iunside of the cards.
 
-
+removeArticleCard() //Function that addevent listener to remove button and removes the closest article element
+//which removes the whole card form the dom
 
 function yesNoButtonColorChange(){
 //Click yes or no button in book info form and the corresponding element background color
@@ -168,7 +169,11 @@ function cardInsert() {
     }
 
 cardInsert()  ///run inner function  that inserts new card elements based on input into the add book form
+
 yesNoButtonColorChange()//re run funciton that applies coloring logic to yes and no buttons on forms saying whther read or not.
+
+removeArticleCard()//funciton that adds event listener to the removeButton button
+// and uses the e.target.closest() method to remove the whole article element from DOM
 
 //if statement for yes no button in main html cards and also transfer rating to main html cards from bookadd form inputs
 //uses dataset selector and yes or no button seelector to choose the right thing to delete
@@ -186,6 +191,19 @@ console.log(ratingButtonValue.value)
 
 
 })
+
+
+function removeArticleCard() {
+removeButton = document.querySelectorAll('.removeButton')
+
+removeButton.forEach ( (input)=> { input.addEventListener('click', (e) => {
+
+    e.target.closest('article').remove()
+
+})
+})
+
+}
 
 
 /*Write a function that loops through the array and displays each book on the page. 
