@@ -180,7 +180,7 @@ removeArticleCard()//funciton that adds event listener to the removeButton butto
 
 if (readYet == 'yes') {document.querySelector(`[data-article-title=${bookTitle}] .yesButton`).style.backgroundColor = "rgb(105, 198, 145"}
 else if(readYet == 'no') {document.querySelector(`[data-article-title=${bookTitle}] .noButton`).style.backgroundColor = "rgb(227, 149, 110)"}
-//TO DO//
+//TO DO/ 
 
 //below element selector grabs the element based on the object created above and then set the checked attribute to 
 //true based on the used input in the add book form
@@ -205,18 +205,18 @@ removeButton.forEach ( (input)=> { input.addEventListener('click', (e) => {
 
   let bookValueReference =  e.target.getAttribute('data-remove-button')
 
-  console.log(bookValueReference)
+  
 
   const indexOfObject = myBooksArray.findIndex(object => {
     return object.title === bookValueReference;
   });
   
-  console.log(indexOfObject); 
+  
   
   myBooksArray.splice(indexOfObject, 1);
   
 
-console.log(myBooksArray) // 👉️ [{id: 1}, {id: 5}]
+
 
     
 
