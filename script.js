@@ -3,7 +3,7 @@
 //use event delegation to check fo remove b utton as target then remove the whole article card element
 //this would be to remove cards when the user clicks on the remove button iunside of the cards.
 
-removeArticleCard() //Function that addevent listener to remove button and removes the closest article element
+removeArticleCard() //Function that addevent listener to remove button a`nd removes the closest article element
 //which removes the whole card form the dom
 
 function yesNoButtonColorChange(){
@@ -61,7 +61,7 @@ function(event){
 })
 
 
-function Book(title,author,pages,readYet,rating) {  //Book object
+class Book {constructor (title,author,pages,readYet,rating) {  //Book object
 
     this.title = title;
     this.author = author;
@@ -70,7 +70,7 @@ function Book(title,author,pages,readYet,rating) {  //Book object
     this.rating = rating;
     
     //constructor
-}
+}}
 
 const testBook1 =new Book('The Trickster and the Paranormal','George P. Hansen', 564) ;//test book objects for displaying 
 const testBook2 =new Book('Authors of the Impossible','Dr. Jeffrey Kripal',332)  ;     //new books in the card section
