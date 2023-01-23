@@ -1,5 +1,7 @@
 ////*****JS file for Library App*****////
 
+
+
 //use event delegation to check fo remove b utton as target then remove the whole article card element
 //this would be to remove cards when the user clicks on the remove button iunside of the cards.
 
@@ -92,12 +94,26 @@ const addBookConstructorButton =  document.querySelector('.addBookConstructorBut
 addBookConstructorButton.addEventListener('click', function addBook(event) { //funciton tha takes input form bookaddinput form and creates an 
     //...new book constructor that can then be placed into array for later display.
 event.preventDefault()//must prevent default event bacause it will reload page 
-let bookTitle = document.querySelector(".bookTitleInput").value;
+
+
+let escapeHtml = (function () { /////Function to rpevent XSS attacks for the user supplied input below
+    'use strict';
+    let chr = { '"': '&quot;', '&': '&amp;', '<': '&lt;', '>': '&gt;' };
+    return function (text) {
+        return text.replace(/[\"&<>]/g, function (a) { return chr[a]; });
+    };
+}());
+
+
+let bookTitle = document.querySelector(".bookTitleInput").value
 let bookAuthor = document.querySelector(".bookAuthorInput").value;
 let bookPages = document.querySelector(".bookPagesInput").value;
 let readYet = document.querySelector("input[name='readYet']:checked").value;
 let rating = document.querySelector("input[name='addBookRating']:checked").value;
 
+bookTitle = escapeHtml(bookTitle)
+bookAuthor = escapeHtml(bookAuthor)
+bookPages = escapeHtml(bookPages)
 
 
 const addFormInput = document.querySelector(".bookAddFormInput")
@@ -133,7 +149,7 @@ function cardInsert() {
                     
                 <div class = "bookInfoImageContainer">
                     <ul>
-                        <li>Title: ${bookTitle}</li>
+                        <li>Title:${bookTitle}</li>
                         <li>Author: ${bookAuthor}</li>
                         <li>Pages: ${bookPages} </li>
                         <li>Read yet: <button class = 'yesButton'>Yes</button>
@@ -155,7 +171,7 @@ function cardInsert() {
                         <p class = "rateMe">rating</p>
                     </form>
                     </div>
-                    <button class = "removeButton" data-remove-button =${bookTitle}>Remove</button>
+                    <button class = "removeButton" data-remove-button ="${bookTitle}">Remove</button>
                 </div>
                 
             </article>
@@ -164,7 +180,9 @@ function cardInsert() {
     const container = document.querySelector(".cardContainer")  /////CSS WAS BEING APPLIED by functons above were not being 
                                                                 //applied to yes and no buttons becuase the only ran once 
                                                                 //because they run in the global scope on initial dom load.
-    container.insertAdjacentHTML("beforeend", cardFormTemplate)
+    
+    
+    container.insertAdjacentHTML("beforeend", DOMPurify.sanitize(cardFormTemplate))
     
     }
 
