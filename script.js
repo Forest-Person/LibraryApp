@@ -182,7 +182,7 @@ function cardInsert() {
                                                                 //because they run in the global scope on initial dom load.
     
     
-    container.insertAdjacentHTML("beforeend", DOMPurify.sanitize(cardFormTemplate))
+    container.insertAdjacentHTML("beforeend", cardFormTemplate)
     
     }
 
